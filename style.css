@@ -1,0 +1,322 @@
+/*Nav bar*/
+*{
+    padding: 0;
+    margin:0;
+}
+body{
+    height: 100vh;
+    background: radial-gradient(#1C1F2C 30%, #0D0E14);
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.4;
+}
+ul{
+    list-style: none;
+}
+header{
+    width: 100%;
+}
+header img{
+    height: 40px;
+    margin: 0px 0px 10px 0;
+    padding: 20px 16px;
+}
+header nav{
+    height: 72px;
+}
+header ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    padding: 16px 18px;
+}
+header p{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 30px 0px;
+    margin: 0 0px;
+    overflow: hidden;
+    position: relative;
+}
+header p::after{
+    content: "";
+    display:block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+header p:hover::after{
+    animation-name: showunderline;
+    animation-duration:300ms;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-out;
+}
+.icons{
+    height: 15px;
+    width: 15px;
+    padding: px;
+}
+
+@keyframes showunderline{
+    0%{
+        background: #fff;
+        transform: translateX(-100%);
+        opacity: 0%;
+    }
+
+50%{
+    background: #fff;
+    opacity: 50px;
+}
+100%{
+    background: #fff;
+    transform: translateX(0%);
+    opacity: 100%;
+}
+}
+/*Perfil de usuario*/
+.profile{
+    position: fixed;
+    top: 2%;
+    right: 10px;
+    margin:0;
+    height: 0%;
+    transition: height .45 ease-out;
+    z-index: 3;
+}
+
+.avatar{
+    height: 48px;
+    width: 48px;
+    padding: 10px;
+}
+.profile-selected{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 10px 0 20px;
+}
+
+.profile-selected label{
+    display: none;
+}
+
+.profile:hover label{
+    display: inline;
+}
+
+.profile:hover{
+    background-color: #131313;
+    top: 0%;
+    border-left: .1mm solid rgb(82,82,82);
+    border-bottom: .1mm solid rgb(82,82,82);
+    border-radius: 5px;
+    height: 53%;
+}
+
+.profile:hover .profile-selected{
+    border-bottom: 0.01rem solid rgb(82,82,82);
+}
+.profile-nav{
+    display: none;
+    margin-right: 30px;
+    color:rgb(179,178,178)
+}
+.profile:hover .profile-nav{
+    display: block;
+    animation-name: showprofiles;
+    animation-duration: 900ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+}
+.profile-nav-profiles label{
+    
+    margin-left: 5px;
+    font-size: 14px;
+}
+.profile-nav-profiles li{
+    display:flex;
+    align-items: center;
+}
+.profile-nav-profiles img{
+    margin-left: 10px;
+}
+.profile-nav-options li{
+    margin:15px;
+}
+@keyframes showprofiles{
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+/*Carousel*/
+.carousel {
+    margin-top: 50px;
+    background: radial-gradient(#1C1F2C 30%, #0D0E14);
+  }
+  
+  .carousel-cell {
+      
+    width: 1283px;
+    height: 380px;
+    margin-right: 80px;
+    border-radius: 5px;
+    counter-increment: gallery-cell;
+  }
+  
+  
+  /* position dots in gallery */
+  .flickity-page-dots {
+    bottom: 1px;
+    left: 600px;
+  }
+  /* white circles */
+  .flickity-page-dots .dot {
+    width: 5px;
+    height: 5px;
+    opacity: 1;
+    background: transparent;
+    background: dimgray;
+  }
+  /* fill-in selected dot */
+  .flickity-page-dots .dot.is-selected {
+    background:white;
+  }
+  
+/*temas*/
+  .container-sec {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  
+  .item {
+    width: 35%;
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .item__border {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+    border-radius: 10px;
+    border: 4px solid rgba(249, 249, 249, 0.1);
+    transition: transform 250ms ease-in-out, border 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  }
+  
+  .item__image {
+   width: 100%;
+   height: 100%;
+   border-radius: 5px;
+   z-index: 1;
+  }
+  
+  .item__image.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    visibility: hidden;
+  }
+  
+  .item:hover .item__border {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px, rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
+    transform: scale(1.05);
+    border: 4px solid rgba(249, 249, 249, 0.8);
+  }
+  
+  .item:hover .item__image.hover-image {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 1;
+    visibility: visible;
+  }
+  /*secciones*/
+  .titulos{
+      color:white;
+      font-size: 20px;
+      margin-left: 30px;
+  }
+  .container-secc {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  
+  .item-secc {
+    width: 35%;
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .item__border-secc {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+    border-radius: 10px;
+    transition: transform 250ms ease-in-out, border 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  }
+  
+  .item__image-secc {
+   width: 100%;
+   height: 100%;
+   border-radius: 5px;
+   z-index: 1;
+  }
+  
+  .item__image-secc.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    visibility: hidden;
+  }
+  
+  .item-secc:hover .item__border-secc {
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px, rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
+    transform: scale(1.05);
+    border: 4px solid rgba(249, 249, 249, 0.8);
+  }
+  
+  .item-secc:hover .item__image-secc.hover-image {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  
+  @media only screen and (min-width: 992px) {
+    .container {
+      flex-direction: row;
+    }
+    .item {
+    width: 20%;
+    }
+    .profile:hover{
+ 
+        height: 80%;
+    }
+  }
