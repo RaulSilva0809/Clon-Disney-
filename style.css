@@ -121,7 +121,7 @@ header p:hover::after{
     border-left: .1mm solid rgb(82,82,82);
     border-bottom: .1mm solid rgb(82,82,82);
     border-radius: 5px;
-    height: 53%;
+    height: 52%;
 }
 
 .profile:hover .profile-selected{
@@ -317,6 +317,6 @@ header p:hover::after{
     }
     .profile:hover{
  
-        height: 52%;
+        height: 82%;
     }
   }
